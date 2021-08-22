@@ -1,0 +1,45 @@
+﻿<Window x:Class="winProfesor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProyectoProgramacion"
+        mc:Ignorable="d"
+        Title="Mantenimiento de Profesores" Height="503.202" Width="783.375" WindowStartupLocation="CenterScreen">
+
+    <Grid Margin="0,0,12,8">
+        <DataGrid x:Name="dtgProfesor" HorizontalAlignment="Left" Height="181" Margin="37,17,0,0" VerticalAlignment="Top" Width="691">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=prop_clave_p}" ClipboardContentBinding="{x:Null}" Header="Id " Width="50"/>
+                <DataGridTextColumn Binding="{Binding Path=prop_nom_p}" ClipboardContentBinding="{x:Null}" Header="Nombre Profesor" Width="150"/>
+                <DataGridTextColumn Binding="{Binding Path=prop_dir_p}" ClipboardContentBinding="{x:Null}" Header="Direccion" Width="200"/>
+                <DataGridTextColumn Binding="{Binding Path=prop_tel_p}" ClipboardContentBinding="{x:Null}" Header="Telefono" Width="75"/>
+                <DataGridTextColumn Binding="{Binding Path=prop_hor_p}" ClipboardContentBinding="{x:Null}" Header="Horario" Width="140"/>
+
+
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="btnEliminarProfesor" Click="btnEliminarProfesor_Click" >Eliminar</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBlock x:Name="txbIdProfesor" HorizontalAlignment="Left" Margin="102,226,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="87" Height="22" Background="#FFFBCCCC"/>
+        <Label x:Name="label" Content="Clave/Id:" HorizontalAlignment="Left" Margin="34,222,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Copy" Content="Nombre:" HorizontalAlignment="Left" Margin="34,259,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Copy1" Content="Telefono:" HorizontalAlignment="Left" Margin="34,294,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtNombreProfesor" HorizontalAlignment="Left" Height="26" Margin="103,259,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="175"/>
+        <TextBox x:Name="txtTelefono" HorizontalAlignment="Left" Height="26" Margin="102,294,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="175"/>
+        <Button x:Name="btnGuardarProfesor" Content="Registrar" HorizontalAlignment="Left" Margin="44,361,0,0" VerticalAlignment="Top" Width="85" RenderTransformOrigin="-0.84,0.275" Height="32"/>
+        <Button x:Name="btnModificarProfesor" Content="Modificar" HorizontalAlignment="Left" Margin="192,360,0,0" VerticalAlignment="Top" Width="86" Height="32" RenderTransformOrigin="-0.121,0.302"/>
+        <Label Content="Direccion:" HorizontalAlignment="Left" Margin="406,241,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.029,0.701"/>
+        <Label Content="Horario:" HorizontalAlignment="Left" Margin="411,342,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtDireccion" HorizontalAlignment="Left" Height="56" Margin="523,227,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="217"/>
+        <TextBox x:Name="txtHorario" HorizontalAlignment="Left" Height="26" Margin="597,305,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="35" RenderTransformOrigin="3.106,-1.819"/>
+        <Calendar x:Name="cl_horario" HorizontalAlignment="Left" Margin="526,292,0,0" VerticalAlignment="Top" Width="210"/>
+
+    </Grid>
+
+</Window>

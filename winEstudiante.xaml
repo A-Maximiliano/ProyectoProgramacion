@@ -1,0 +1,50 @@
+﻿<Window x:Class="winEstudiante"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProyectoProgramacion"
+        mc:Ignorable="d"
+        Title="Manteniumiento de Estudiantes" Height="450" Width="783.636" WindowStartupLocation="CenterScreen">
+    <Grid Margin="0,0,12,0">
+        <DataGrid x:Name="dtgEstudiante" HorizontalAlignment="Left" Height="151" Margin="34,38,0,0" VerticalAlignment="Top" Width="691">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=prop_mat_alu}" ClipboardContentBinding="{x:Null}" Header="Id " Width="50"/>
+                <DataGridTextColumn Binding="{Binding Path=prop_nom_alu}" ClipboardContentBinding="{x:Null}" Header="Nombre Estudiante" Width="200"/>
+                <DataGridTextColumn Binding="{Binding Path=prop_edad_alu}" ClipboardContentBinding="{x:Null}" Header="Edad" Width="50"/>
+                <DataGridTextColumn Binding="{Binding Path=prop_sem_alu}" ClipboardContentBinding="{x:Null}" Header="Semestre" Width="75"/>
+                <DataGridTextColumn Binding="{Binding Path=prop_gen_alu}" ClipboardContentBinding="{x:Null}" Header="Genero" Width="85"/>
+                <DataGridTextColumn Binding="{Binding Path=prop_clave_c1}" ClipboardContentBinding="{x:Null}" Header="Clave carrera" Width="125"/>
+
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="btnEliminarEstudiante" Click="btnEliminarEstudiante_Click" >Eliminar</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBlock x:Name="txbIdEstudiente" HorizontalAlignment="Left" Margin="102,226,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="87" Height="22" Background="#FFFBCCCC"/>
+        <Label x:Name="label" Content="Clave/Id:" HorizontalAlignment="Left" Margin="34,222,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Copy" Content="Nombre:" HorizontalAlignment="Left" Margin="34,253,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Copy1" Content="Edad:" HorizontalAlignment="Left" Margin="34,294,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtNombreEstudiante" HorizontalAlignment="Left" Height="26" Margin="102,258,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="175"/>
+        <TextBox x:Name="txtEdad" HorizontalAlignment="Left" Height="26" Margin="102,294,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="175"/>
+        <Button x:Name="btnGuardarEstudiante" Content="Registrar" HorizontalAlignment="Left" Margin="195,373,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.84,0.275"/>
+        <Button x:Name="btnModificarEstudiante" Content="Modificar" HorizontalAlignment="Left" Margin="334,374,0,0" VerticalAlignment="Top" Width="76"/>
+        <Label Content="Semestre:" HorizontalAlignment="Left" Margin="403,223,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.029,0.701"/>
+        <Label Content="Genero:" HorizontalAlignment="Left" Margin="402,256,0,0" VerticalAlignment="Top"/>
+        <Label Content="Clave Carrera:" HorizontalAlignment="Left" Margin="403,303,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.535,0.937"/>
+        <TextBox x:Name="txtSemestre" HorizontalAlignment="Left" Height="26" Margin="523,227,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="165"/>
+        <TextBox x:Name="txtGenero" HorizontalAlignment="Left" Height="15" Margin="581,313,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" RenderTransformOrigin="0.227,6.797"/>
+        <TextBox x:Name="txtClave_c" HorizontalAlignment="Left" Height="30" Margin="522,303,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="165"/>
+        <ComboBox x:Name="cmbGenero" HorizontalAlignment="Left" Margin="522,262,0,0" VerticalAlignment="Top" Width="164" SelectedIndex="0" Height="30">
+            <ComboBoxItem Content="Femenino"/>
+            <ComboBoxItem Content="Masculino"/>
+            <ComboBoxItem Content="Otro"/>
+        </ComboBox>
+
+    </Grid>
+
+</Window>

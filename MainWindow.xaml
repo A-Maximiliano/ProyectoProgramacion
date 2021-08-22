@@ -1,0 +1,37 @@
+﻿<Window x:Class="MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProyectoProgramacion"
+        mc:Ignorable="d"
+        Title="Mantenimiento Carreras" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+
+    <Grid>
+        <DataGrid x:Name="dtgCarreras" HorizontalAlignment="Left" Height="151" Margin="34,38,0,0" VerticalAlignment="Top" Width="691">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=clave_c_prop}" ClipboardContentBinding="{x:Null}" Header="Clave/Id " Width="75"/>
+                <DataGridTextColumn Binding="{Binding Path=nom_c_prop}" ClipboardContentBinding="{x:Null}" Header="Nombre Carrera" Width="300"/>
+                <DataGridTextColumn Binding="{Binding Path=dura_c_prop}" ClipboardContentBinding="{x:Null}" Header="Duración Cuatrimestres" Width="150"/>
+
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="btnEliminarCarrera" Click="btnEliminarCarrera_Click" >Eliminar</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBlock x:Name="txbId" HorizontalAlignment="Left" Margin="102,226,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="87" Height="22" Background="#FFFBCCCC"/>
+        <Label x:Name="label" Content="Clave/Id:" HorizontalAlignment="Left" Margin="34,222,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Copy" Content="Nombre:" HorizontalAlignment="Left" Margin="34,253,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Copy1" Content="Duración:" HorizontalAlignment="Left" Margin="34,294,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtNombreCarrera" HorizontalAlignment="Left" Height="26" Margin="102,253,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="175"/>
+        <TextBox x:Name="txtDuracionCarrera" HorizontalAlignment="Left" Height="26" Margin="102,294,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="175"/>
+        <Button x:Name="btnGuardar" Content="Registrar" HorizontalAlignment="Left" Margin="202,342,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.84,0.275"/>
+        <Button x:Name="btnModificar" Content="Modificar" HorizontalAlignment="Left" Margin="293,342,0,0" VerticalAlignment="Top" Width="76"/>
+
+    </Grid>
+
+</Window>
